@@ -1,8 +1,10 @@
 {
   "projectId": "tiv431",
-  "modifyObstructiveCode": true,
+  "modifyObstructiveCode": false,
 
-"experimentalSourceRewriting":true,
+  "experimentalSourceRewriting":true,
+  
+  "chromeWebSecurity": true
 
-"chromeWebSecurity": true
+
 }

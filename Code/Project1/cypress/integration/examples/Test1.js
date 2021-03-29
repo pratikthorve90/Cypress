@@ -74,6 +74,8 @@ describe('My First Test : This is Test Suite', function()
 
           cy.get('.brand').should('have.text','GREENKART1')   // should comes from chai library
       })
+
+      
 }
 )
 
