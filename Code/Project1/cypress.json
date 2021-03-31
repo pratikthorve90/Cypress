@@ -1,6 +1,6 @@
 {
   "projectId": "tiv431",
-  "modifyObstructiveCode": false,
+  "modifyObstructiveCode": true,
 
   "experimentalSourceRewriting":true,
   
