@@ -1,10 +1,25 @@
 {
   "projectId": "tiv431",
+
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/results",
+    "overwrite": false
+  },
+
   "modifyObstructiveCode": true,
 
   "experimentalSourceRewriting":true,
   
-  "chromeWebSecurity": true
+  "chromeWebSecurity": true,
+  "defaultCommandTimeout": 8000,
+
+  "env":{
+    "url":"https://rahulshettyacademy.com/angularpractice/"
+
+  }
+
+  
 
 
 }

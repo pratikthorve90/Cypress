@@ -1,0 +1,103 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-04-08T04:44:38.563Z",
+    "end": "2021-04-08T04:44:52.317Z",
+    "duration": 13754,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "094a372f-a2cf-4f4f-aa0d-2e661c6d66da",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\Test3.js",
+      "file": "cypress\\integration\\examples\\Test3.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "94af194e-b08b-4246-bda6-78030eabe332",
+          "title": "This is Test Suite 3",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Handling Web Elements ",
+              "fullTitle": "This is Test Suite 3 Handling Web Elements ",
+              "timedOut": null,
+              "duration": 11737,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\ncy.get('#checkBoxOption1').check();\ncy.get('#checkBoxOption1').should('be.checked');\ncy.get('#checkBoxOption1').should('have.value', 'option1'); // we can also chain them as\ncy.get('#checkBoxOption2').check().should('be.checked').should('have.value', 'option2'); // un check\ncy.get('#checkBoxOption1').uncheck().should('not.be.checked'); // Check multiple checkbox , find a locator that is common for all check box\ncy.get('input[type=\"checkbox\"]').check(['option1', 'option2', 'option3']); // Static Dropdown , Select by value defined in the html tag\ncy.get('#dropdown-class-example').select('option2').should('have.value', 'option2'); // Dynamic dropdown , its difficult where we need to iterate on all the options , compare with our required value and then do the same.\ncy.get('#autocomplete').type('ind'); // here ui-menu-item is the parent element and under that there is div tag which has the value\n// $element.text().includes('India') this fails at it also matches british indian ocean territory\ncy.get('.ui-menu-item div').each(function ($element, index, $list) {\n  if ($element.text() === 'India') {\n    cy.wrap($element).click();\n  }\n});\ncy.get('#autocomplete').should('have.value', 'India'); // Check for visible and in visible elements\ncy.get('#displayed-text').should('be.visible');\ncy.get('#hide-textbox').click();\ncy.get('#displayed-text').should('not.be.visible'); // Radio Button\ncy.get('#radio-btn-example label input').each(function ($element, index, $list) {\n  cy.log($element.text());\n  if ($element.text().includes('Radio2')) {\n    cy.wrap($element).click();\n  }\n});\ncy.get('[value=\"radio2\"]').check().should('be.checked');",
+              "err": {},
+              "uuid": "150e8763-55ce-4a3a-96c0-bc77771ce923",
+              "parentUUID": "94af194e-b08b-4246-bda6-78030eabe332",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "150e8763-55ce-4a3a-96c0-bc77771ce923"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11737,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false
+      },
+      "version": "5.2.0"
+    }
+  }
+}

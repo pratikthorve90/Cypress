@@ -1,0 +1,179 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-04-06T01:57:59.689Z",
+    "end": "2021-04-06T01:58:17.435Z",
+    "duration": 17746,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "31baad72-e2c9-420a-87ce-2dddf6e4507b",
+      "title": "",
+      "fullFile": "cypress\\integration\\Framework1\\Test1.js",
+      "file": "cypress\\integration\\Framework1\\Test1.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "3bbbfb7a-9935-4c8c-a152-fa855efe3486",
+          "title": "This is framework 1",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "TC01 : Register User",
+              "fullTitle": "This is framework 1 TC01 : Register User",
+              "timedOut": null,
+              "duration": 5239,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(1) > .form-control').type(this.data.name).debug();\ncy.get(':nth-child(2) > .form-control').type(this.data.email);\ncy.get('#exampleInputPassword1').type(this.data.password);\nif (this.data.icecream === true) {\n  cy.get('#exampleCheck1').check();\n}\ncy.get('#exampleFormControlSelect1').select(this.data.gender);\ncy.get('#inlineRadio1').check();\ncy.get(':nth-child(8) > .form-control').type(this.data.dob);",
+              "err": {},
+              "uuid": "f1db7343-538f-4902-ba2b-197d17d7f2a0",
+              "parentUUID": "3bbbfb7a-9935-4c8c-a152-fa855efe3486",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "More Validations",
+              "fullTitle": "This is framework 1 More Validations",
+              "timedOut": null,
+              "duration": 493,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Validate 2 way binding , that text you entered is same as text replicated in other block\ncy.get(':nth-child(1) > .form-control').type('Malhar');\nvar text = cy.get(':nth-child(1) > .form-control').invoke('val').then(function (text) {\n  this.name = text;\n  cy.log(text);\n});\ncy.get(':nth-child(4) > .ng-untouched').should('have.value', 'Malhar');\ncy.get(':nth-child(4) > .ng-untouched').invoke('val').then(function (currentValue) {\n  expect(currentValue).to.equal('Malhar');\n}); // Validate that minlength attribute for the text box is defined as 2\ncy.get(':nth-child(1) > .form-control').should('have.attr', 'minlength', '2'); // Check that the element is disabled \ncy.get('#inlineRadio3').should('be.disabled');",
+              "err": {},
+              "uuid": "e408ceba-5a6b-4c61-bdfc-78780159caac",
+              "parentUUID": "3bbbfb7a-9935-4c8c-a152-fa855efe3486",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add Products to cart based on text",
+              "fullTitle": "This is framework 1 Add Products to cart based on text",
+              "timedOut": null,
+              "duration": 2038,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get(':nth-child(2) > .nav-link').click();\nthis.data.productName.forEach(function (element) {\n  cy.selectProduct(element);\n});\ncy.get('#navbarResponsive > .navbar-nav > .nav-item > .nav-link').click();",
+              "err": {},
+              "uuid": "2eba91bb-0381-494c-a2e1-384cebcffa2f",
+              "parentUUID": "3bbbfb7a-9935-4c8c-a152-fa855efe3486",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Using page object Model : User Registration",
+              "fullTitle": "This is framework 1 Using page object Model : User Registration",
+              "timedOut": null,
+              "duration": 1698,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var homePage = new _HomePage[\"default\"]();\nhomePage.getName().type(this.data.name);\nhomePage.getEmail().type(this.data.email);\nhomePage.getPassword().type(this.data.password);\nhomePage.getGender().select(this.data.gender);\nhomePage.getEmploymentStatusAsStudent().check();\nhomePage.getDOB().type(this.data.dob);",
+              "err": {},
+              "uuid": "dc3302c7-dd46-4f1f-b0c0-f50c815773ff",
+              "parentUUID": "3bbbfb7a-9935-4c8c-a152-fa855efe3486",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Using Function in page object model : Select Product",
+              "fullTitle": "This is framework 1 Using Function in page object model : Select Product",
+              "timedOut": null,
+              "duration": 6370,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var shop = new _Shop[\"default\"]();\nvar checkOutPage = new _CheckoutPage[\"default\"]();\nvar deliveryPage = new _DeliveryPage[\"default\"]();\ncy.get(':nth-child(2) > .nav-link').click();\nthis.data.productName.forEach(function (element) {\n  shop.selectProduct(element);\n});\nshop.getCheckOut().click(); // Validate Sum for all products match to the total , dynamic way\nvar sum = 0;\ncy.get('tr td:nth-child(4) strong').each(function ($el, index, $list) {\n  var amount = $el.text();\n  var res = amount.split(\" \");\n  res = res[1].trim();\n  sum = Number(sum) + Number(res);\n});\ncy.log(sum);\ncheckOutPage.getCheckOutButton().click();\ndeliveryPage.getCountryField().type('India');\ndeliveryPage.getCountryDropDownList().click();\ndeliveryPage.getTermsAndCondition().click({\n  force: true\n});\ndeliveryPage.getPurchaseButton().click();\ndeliveryPage.getAlertText().then(function (alertText) {\n  cy.log(alertText.text());\n  expect(alertText.text().includes('Success')).to[\"true\"];\n});",
+              "err": {},
+              "uuid": "030a9980-dce1-44ed-a700-78c8ae78515b",
+              "parentUUID": "3bbbfb7a-9935-4c8c-a152-fa855efe3486",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f1db7343-538f-4902-ba2b-197d17d7f2a0",
+            "e408ceba-5a6b-4c61-bdfc-78780159caac",
+            "2eba91bb-0381-494c-a2e1-384cebcffa2f",
+            "dc3302c7-dd46-4f1f-b0c0-f50c815773ff",
+            "030a9980-dce1-44ed-a700-78c8ae78515b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 15838,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false
+      },
+      "version": "5.2.0"
+    }
+  }
+}

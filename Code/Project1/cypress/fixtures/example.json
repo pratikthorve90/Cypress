@@ -5,6 +5,7 @@
   "icecream": "true",
   "gender": "Male",
   "employmentStatus": "student",
-  "dob" : "1990-01-01"
+  "dob" : "1990-01-01",
+  "productName" : ["Blackberry","Samsung Note 8"]
 
 }

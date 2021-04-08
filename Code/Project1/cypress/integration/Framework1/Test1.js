@@ -1,5 +1,11 @@
 /// <reference types="Cypress" />
 
+import HomePage from "../../support/pageObjects/HomePage"
+import Shop from "../../support/pageObjects/Shop"
+import CheckoutPage from "../../support/pageObjects/CheckoutPage"
+import DeliveryPage from "../../support/pageObjects/DeliveryPage"
+
+
 
 describe("This is framework 1", function() {
   
@@ -9,14 +15,13 @@ describe("This is framework 1", function() {
     cy.fixture('example.json').then(function(data) {
       this.data = data
     })
-
-    cy.visit('https://rahulshettyacademy.com/angularpractice/')
+    cy.visit(Cypress.env('url'))
 
   })
 
   it("TC01 : Register User" , function() {
 
-    cy.get(':nth-child(1) > .form-control').type(this.data.name)
+    cy.get(':nth-child(1) > .form-control').type(this.data.name).debug()
     cy.get(':nth-child(2) > .form-control').type(this.data.email) 
     cy.get('#exampleInputPassword1').type(this.data.password)
 
@@ -57,10 +62,65 @@ describe("This is framework 1", function() {
   it('Add Products to cart based on text', function() {
     cy.get(':nth-child(2) > .nav-link').click()
 
-    cy.selectProduct('Blackberry')
+    this.data.productName.forEach(element => {
+      cy.selectProduct(element)
+    });    
 
     cy.get('#navbarResponsive > .navbar-nav > .nav-item > .nav-link').click()
 
   })  
+
+  it('Using page object Model : User Registration', function() {
+
+    const homePage = new HomePage()
+    homePage.getName().type(this.data.name)
+    homePage.getEmail().type(this.data.email)
+    homePage.getPassword().type(this.data.password)
+    homePage.getGender().select(this.data.gender)
+    homePage.getEmploymentStatusAsStudent().check()
+    homePage.getDOB().type(this.data.dob)   
+
+  })
+
+  it('Using Function in page object model : Select Product', function() {
+
+    const shop = new Shop()
+    const checkOutPage = new CheckoutPage()
+    const deliveryPage = new DeliveryPage()
+    cy.get(':nth-child(2) > .nav-link').click()
+
+    this.data.productName.forEach(element => {
+      shop.selectProduct(element)
+    })
+
+    shop.getCheckOut().click()
+
+    // Validate Sum for all products match to the total , dynamic way
+    var sum = 0
+    cy.get('tr td:nth-child(4) strong').each(($el, index, $list) => {
+       
+      const amount=$el.text()
+      var res= amount.split(" ")
+       res= res[1].trim()
+       sum= Number(sum)+Number(res)
+       
+    })
+
+    cy.log(sum)
+    
+    checkOutPage.getCheckOutButton().click()
+    deliveryPage.getCountryField().type('India')
+    deliveryPage.getCountryDropDownList().click()
+    deliveryPage.getTermsAndCondition().click({force: true})
+    deliveryPage.getPurchaseButton().click()
+   
+    deliveryPage.getAlertText().then(function(alertText) {      
+        cy.log(alertText.text())
+        expect(alertText.text().includes('Success')).to.true
+      
+    })
+
+
+  })
 
 })

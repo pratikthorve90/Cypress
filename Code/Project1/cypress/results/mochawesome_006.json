@@ -1,0 +1,169 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 4,
+    "passes": 2,
+    "pending": 0,
+    "failures": 2,
+    "start": "2021-04-08T04:45:19.247Z",
+    "end": "2021-04-08T04:45:49.244Z",
+    "duration": 29997,
+    "testsRegistered": 4,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "831569a5-c93f-4efa-afcb-3b844d124778",
+      "title": "",
+      "fullFile": "cypress\\integration\\examples\\Test5.js",
+      "file": "cypress\\integration\\examples\\Test5.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8fafa5c9-5335-46a9-9c21-b1fb85cc8526",
+          "title": "This is test suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "This is handling table elements",
+              "fullTitle": "This is test suite This is handling table elements",
+              "timedOut": null,
+              "duration": 8368,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\ncy.get('#product').find('tr td:nth-child(2)').each(function ($e1, index, $list) {\n  if ($e1.text().includes('JMETER')) {\n    expect($e1.next().text()).to.equal('25');\n  }\n});",
+              "err": {},
+              "uuid": "9f25696d-167e-4b81-a2fa-16d5595a0f3d",
+              "parentUUID": "8fafa5c9-5335-46a9-9c21-b1fb85cc8526",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Mouse Over Actions",
+              "fullTitle": "This is test suite Mouse Over Actions",
+              "timedOut": null,
+              "duration": 3070,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\ncy.get('.mouse-hover-content').invoke('show');\ncy.contains('Top').click();\ncy.url().should('include', 'top'); // Now cypress also possess capability where it can force click on elements , so \n// if a element is invisible it will bring to to foreground and click on it.\ncy.contains('Reload').click({\n  force: true\n});\ncy.url().should('not.include', 'top');",
+              "err": {},
+              "uuid": "f57ae956-067b-4899-9d46-0db73eff02a9",
+              "parentUUID": "8fafa5c9-5335-46a9-9c21-b1fb85cc8526",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Get HREF Value and visit",
+              "fullTitle": "This is test suite Get HREF Value and visit",
+              "timedOut": null,
+              "duration": 4192,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\ncy.get('#opentab').invoke('attr', 'href').then(function (href) {\n  // here we need to manually resolve the promise.\n  cy.visit(href);\n});",
+              "err": {
+                "message": "SyntaxError: The following error originated from your application code, not from Cypress.\n\n  > Unexpected token '.'\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "SyntaxError: The following error originated from your application code, not from Cypress.\n\n  > Unexpected token '.'\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "diff": null
+              },
+              "uuid": "db79181f-261f-47c7-8c15-cc1cd5ab15d2",
+              "parentUUID": "8fafa5c9-5335-46a9-9c21-b1fb85cc8526",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Handling Frames",
+              "fullTitle": "This is test suite Handling Frames",
+              "timedOut": null,
+              "duration": 12404,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://rahulshettyacademy.com/AutomationPractice/');\ncy.frameLoaded('#courses-iframe');\ncy.iframe().find('a[href*=\"mentorship\"]').eq(0).click();\ncy.iframe().find('h1[class*=\"pricing-title\"]').should('have.length', 2);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 8000ms: Expected to find element: `a[href*=\"mentorship\"]`, but never found it. Queried from element: <body>",
+                "estack": "AssertionError: Timed out retrying after 8000ms: Expected to find element: `a[href*=\"mentorship\"]`, but never found it. Queried from element: <body>\n    at Context.eval (https://rahulshettyacademy.com/__cypress/tests?p=cypress\\integration\\examples\\Test5.js:133:17)",
+                "diff": null
+              },
+              "uuid": "af7ab2f0-8962-4526-9b71-a1bd40bb3ca4",
+              "parentUUID": "8fafa5c9-5335-46a9-9c21-b1fb85cc8526",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9f25696d-167e-4b81-a2fa-16d5595a0f3d",
+            "f57ae956-067b-4899-9d46-0db73eff02a9"
+          ],
+          "failures": [
+            "db79181f-261f-47c7-8c15-cc1cd5ab15d2",
+            "af7ab2f0-8962-4526-9b71-a1bd40bb3ca4"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 28034,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false
+      },
+      "version": "5.2.0"
+    }
+  }
+}
