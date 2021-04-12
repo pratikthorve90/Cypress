@@ -4,8 +4,9 @@
   "description": "this is project 1 for cypress",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/cypress run",
-    "cypress:open": "cypress open"
+    "test": "cypress run",
+    "cypress:open": "cypress open",
+    "say-hello": "echo 'Hello World!'"
   },
   "author": "",
   "license": "ISC",
