@@ -6,6 +6,8 @@
   "gender": "Male",
   "employmentStatus": "student",
   "dob" : "1990-01-01",
-  "productName" : ["Blackberry","Samsung Note 8"]
+  "productName" : ["Blackberry","Samsung Note 8"],
+  "phone": "iphone X",
+  "country":"India"
 
 }

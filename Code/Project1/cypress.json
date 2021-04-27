@@ -6,8 +6,9 @@
     "reportDir": "cypress/results",
     "overwrite": false
   },
-
+  "video": false,
   "modifyObstructiveCode": true,
+  "testFiles": "**/*.feature",
 
   "experimentalSourceRewriting":true,
   
@@ -17,9 +18,15 @@
   "env":{
     "url":"https://rahulshettyacademy.com/angularpractice/"
 
+  },
+
+  "retries": {
+
+    "runMode": 2,
+    "openMode": 0
   }
 
-  
+ 
 
 
 }

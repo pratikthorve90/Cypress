@@ -1,0 +1,150 @@
+[
+  {
+    "description": "    This will buy product on the website",
+    "keyword": "Feature",
+    "name": "Buy product on the website",
+    "line": 1,
+    "id": "buy-product-on-the-website",
+    "tags": [],
+    "uri": "ecommerce.feature",
+    "elements": [
+      {
+        "id": "buy-product-on-the-website;buy-product-tc01",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Buy Product TC01",
+        "tags": [
+          {
+            "name": "@Regression",
+            "line": 5
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 7,
+            "name": "The user visits the ecommerce page",
+            "result": {
+              "status": "passed",
+              "duration": 25624000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 8,
+            "name": "we add items to cart",
+            "result": {
+              "status": "passed",
+              "duration": 10707000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 9,
+            "name": "Validate the total price",
+            "result": {
+              "status": "passed",
+              "duration": 86000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "Clicks submit",
+            "result": {
+              "status": "passed",
+              "duration": 6152000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "Validate the thank you message",
+            "result": {
+              "status": "passed",
+              "duration": 51000000
+            }
+          }
+        ]
+      },
+      {
+        "id": "buy-product-on-the-website;register-user",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Register User",
+        "tags": [
+          {
+            "name": "@Smoke",
+            "line": 13
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 15,
+            "name": "The user visits the ecommerce page",
+            "result": {
+              "status": "passed",
+              "duration": 12055000000
+            }
+          },
+          {
+            "arguments": [
+              {
+                "rows": [
+                  {
+                    "cells": [
+                      "Name",
+                      "Geneder"
+                    ]
+                  },
+                  {
+                    "cells": [
+                      "Raja",
+                      "Male"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "keyword": "And ",
+            "line": 16,
+            "name": "Enter the required details for registrations",
+            "result": {
+              "status": "passed",
+              "duration": 3664000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 19,
+            "name": "Validate the page Behaviour",
+            "result": {
+              "status": "passed",
+              "duration": 438000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 20,
+            "name": "submit the page and validate the registration",
+            "result": {
+              "status": "failed",
+              "error_message": "AssertionError: Timed out retrying after 8000ms: expected '<div.alert.alert-success.alert-dismissible>' to have value 'Success! The Form has been submitted successfully!.', but the value was ''\n    + expected - actual\n\n    +'Success! The Form has been submitted successfully!.'\n\n    at Context.eval (https://rahulshettyacademy.com/__cypress/tests?p=cypress\\integration\\CucumberBDD\\ecommerce.feature:140:20)\n    at Context.resolveAndRunStepDefinition (https://rahulshettyacademy.com/__cypress/tests?p=cypress\\integration\\CucumberBDD\\ecommerce.feature:12587:9)\n    at Context.eval (https://rahulshettyacademy.com/__cypress/tests?p=cypress\\integration\\CucumberBDD\\ecommerce.feature:11930:35)"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -6,14 +6,33 @@
   "scripts": {
     "test": "cypress run",
     "cypress:open": "cypress open",
-    "say-hello": "echo 'Hello World!'"
+    "say-hello": "echo 'Hello World!'",
+    "open": "node_modules/.bin/cypress open",
+    "test:headed": "npm run test -- --headed",
+    "chrome:test:headed": "npm run test:headed -- --browser chrome",
+    "everything": "npm run test -- --record --key 45e4d8e1-7222-4d99-83a4-45d8142b511d --reported mochawesome",
+    "onlyFramework": "cypress run --spec cypress/integration/Framework1/Test1.js",
+    "multipleFilesOption1": "npm run test -- --spec cypress/integration/examples/Test1.js , cypress/integration/examples/Test2.js",
+    "multipleFilesOption2": "cypress run --spec cypress/integration/Framework1/cls*"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^7.0.1",
+    "cypress-cucumber-preprocessor": "^4.0.3",
     "cypress-iframe": "^1.0.1",
     "mocha": "^8.3.2",
-    "mochawesome": "^6.2.2"
+    "mochawesome": "^6.2.2",
+    "multiple-cucumber-html-reporter": "^1.18.0",
+    "npx": "^10.2.2"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   }
 }
