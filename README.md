@@ -26,3 +26,7 @@ Given('When the user visits the ecommerce page'), () => {
 -- Example from Cypress Team
 
 https://example.cypress.io/
+
+-- Cypress documentation is
+
+https://docs.cypress.io/

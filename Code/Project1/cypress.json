@@ -24,7 +24,19 @@
 
     "runMode": 2,
     "openMode": 0
-  }
+  },
+
+
+  "db": {
+    "userName": "pratik",
+    "password": "Malhar@123",
+    "server": "cypresstest.database.windows.net",
+    "options": {
+        "database": "pratikthorve",
+        "encrypt": true,
+        "rowCollectionOnRequestCompletion" : true
+    }
+}
 
  
 

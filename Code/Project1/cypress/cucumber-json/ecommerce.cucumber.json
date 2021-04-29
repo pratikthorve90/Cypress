@@ -28,7 +28,7 @@
             "name": "The user visits the ecommerce page",
             "result": {
               "status": "passed",
-              "duration": 25624000000
+              "duration": 2627000000
             }
           },
           {
@@ -38,7 +38,7 @@
             "name": "we add items to cart",
             "result": {
               "status": "passed",
-              "duration": 10707000000
+              "duration": 871000000
             }
           },
           {
@@ -48,7 +48,7 @@
             "name": "Validate the total price",
             "result": {
               "status": "passed",
-              "duration": 86000000
+              "duration": 153000000
             }
           },
           {
@@ -58,7 +58,7 @@
             "name": "Clicks submit",
             "result": {
               "status": "passed",
-              "duration": 6152000000
+              "duration": 5964000000
             }
           },
           {
@@ -68,7 +68,7 @@
             "name": "Validate the thank you message",
             "result": {
               "status": "passed",
-              "duration": 51000000
+              "duration": 123000000
             }
           }
         ]
@@ -93,7 +93,7 @@
             "name": "The user visits the ecommerce page",
             "result": {
               "status": "passed",
-              "duration": 12055000000
+              "duration": 2307000000
             }
           },
           {
@@ -120,7 +120,7 @@
             "name": "Enter the required details for registrations",
             "result": {
               "status": "passed",
-              "duration": 3664000000
+              "duration": 1547000000
             }
           },
           {
@@ -130,7 +130,7 @@
             "name": "Validate the page Behaviour",
             "result": {
               "status": "passed",
-              "duration": 438000000
+              "duration": 305000000
             }
           },
           {
@@ -140,7 +140,7 @@
             "name": "submit the page and validate the registration",
             "result": {
               "status": "failed",
-              "error_message": "AssertionError: Timed out retrying after 8000ms: expected '<div.alert.alert-success.alert-dismissible>' to have value 'Success! The Form has been submitted successfully!.', but the value was ''\n    + expected - actual\n\n    +'Success! The Form has been submitted successfully!.'\n\n    at Context.eval (https://rahulshettyacademy.com/__cypress/tests?p=cypress\\integration\\CucumberBDD\\ecommerce.feature:140:20)\n    at Context.resolveAndRunStepDefinition (https://rahulshettyacademy.com/__cypress/tests?p=cypress\\integration\\CucumberBDD\\ecommerce.feature:12587:9)\n    at Context.eval (https://rahulshettyacademy.com/__cypress/tests?p=cypress\\integration\\CucumberBDD\\ecommerce.feature:11930:35)"
+              "error_message": "AssertionError: Timed out retrying after 8000ms: expected '<div.alert.alert-success.alert-dismissible>' to have value 'Success! The Form has been submitted successfully!.', but the value was ''\n    + expected - actual\n\n    +'Success! The Form has been submitted successfully!.'\n\n    at Context.eval (https://rahulshettyacademy.com/__cypress/tests?p=cypress\\integration\\CucumberBDD\\ecommerce.feature:151:20)\n    at Context.resolveAndRunStepDefinition (https://rahulshettyacademy.com/__cypress/tests?p=cypress\\integration\\CucumberBDD\\ecommerce.feature:12598:9)\n    at Context.eval (https://rahulshettyacademy.com/__cypress/tests?p=cypress\\integration\\CucumberBDD\\ecommerce.feature:11941:35)"
             }
           }
         ]

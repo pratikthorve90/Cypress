@@ -12,10 +12,19 @@ const shop = new Shop()
 const checkOutPage = new CheckoutPage()
 const deliveryPage = new DeliveryPage()
 let inputData   // declare global variables
+let dataRetrivedFromSQL  // declare global variable
 
 Given('The user visits the ecommerce page', function(){
   cy.visit(Cypress.env('url')) 
   cy.log(this.data.name)
+  // This returns data in 2 dimensional array if there are more than 1 rows ,else return single dimensional array
+  cy.sqlServer("Select * from Persons").then(response =>{   
+    console.log(response)
+    cy.log(response)
+    cy.log(response[1])   // Prints FirstName , 0 is for ID
+    dataRetrivedFromSQL= response
+  })
+
 })
 
 When('we add items to cart' , function() {
@@ -62,7 +71,8 @@ And('Enter the required details for registrations', function(dataTable) {
 
   inputData = dataTable.rawTable
   cy.get(':nth-child(1) > .form-control').type(inputData[1][0]).debug()
-  cy.get(':nth-child(2) > .form-control').type(this.data.email) 
+   // cy.get(':nth-child(2) > .form-control').type(this.data.email)   dataRetrivedFromSQL
+   cy.get(':nth-child(2) > .form-control').type(dataRetrivedFromSQL[0]) 
   cy.get('#exampleInputPassword1').type(this.data.password)
 
   if(this.data.icecream === true){
